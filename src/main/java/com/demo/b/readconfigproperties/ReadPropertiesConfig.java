@@ -1,4 +1,4 @@
-package com.demo.a.config;
+package com.demo.b.readconfigproperties;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,7 +15,7 @@ import com.demo.a.entity.User;
  *
  */
 @Configuration
-@PropertySource("classpath:/config/app.properties")
+@PropertySource("classpath:/config/config.properties")
 public class ReadPropertiesConfig {
 
 	@Autowired
@@ -28,10 +28,6 @@ public class ReadPropertiesConfig {
 		String magic = evn.getProperty("magic");
 		System.out.println(magic);
 		System.out.println(str);
-	}
-
-	public User getUserInfo() {
-		return new User(evn.getProperty("name"), evn.getProperty("pwd"));
 	}
 
 }

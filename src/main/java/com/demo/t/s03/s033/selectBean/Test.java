@@ -1,4 +1,4 @@
-package com.demo.a.t.s33.selectBean;
+package com.demo.t.s03.s033.selectBean;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

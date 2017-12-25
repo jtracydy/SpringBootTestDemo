@@ -1,4 +1,4 @@
-package com.demo.a.t.s33.selectBean;
+package com.demo.t.s03.s033.selectBean;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;

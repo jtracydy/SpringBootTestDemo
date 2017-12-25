@@ -1,4 +1,4 @@
-package com.demo.a.t.s33.selectBean;
+package com.demo.t.s03.s033.selectBean;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

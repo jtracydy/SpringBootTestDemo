@@ -1,4 +1,4 @@
-package com.demo.a.t.s32.conditional;
+package com.demo.t.s03.s032.conditional;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
