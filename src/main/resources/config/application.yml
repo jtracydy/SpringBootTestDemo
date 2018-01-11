@@ -1,14 +1,19 @@
-myProps: #自定义的属性和值
-  simpleProp: simplePropValue
-  arrayProps: 1,2,3,4,5
-  listProp1:
-    - name: abc
-      value: abcValue
-    - name: efg
-      value: efgValue
-  listProp2:
-    - config2Value1
-    - config2Vavlue2
-  mapProps:
-    key1: value1
-    key2: value2
+server:
+  port: ${tomcat.port:${SERVER_PORT:${PORT:8080}}}
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  jpa:
+    show-sql: true
+    database: MYSQL
+    generateDdl: false
+    databasePlatform: org.hibernate.dialect.MySQL5InnoDBDialect
+    properties:
+      hibernate:
+        format_sql: false
+        generate_statistics: false
+  datasource:
+    url: jdbc:mysql://${db.host}:${db.port}/user?useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&failOverReadOnly=false&maxReconnects=10&useSSL=false
+    username: ${db.username}
+    password: ${db.password}
+    slowSqlMillis: 500

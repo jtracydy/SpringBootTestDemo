@@ -8,8 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Component
-@ConfigurationProperties(prefix="myProps") //application.yml中的myProps下的属性
+//@Component
+//@ConfigurationProperties(prefix="myProps") //application.yml中的myProps下的属性
 public class YmlConfig {
     private String simpleProp;
     private String[] arrayProps;

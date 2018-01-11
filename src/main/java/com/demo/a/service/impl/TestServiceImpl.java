@@ -1,24 +1,28 @@
 package com.demo.a.service.impl;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
+import com.alibaba.fastjson.JSON;
+import com.demo.a.repository.TestReposotory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.demo.a.entity.User;
 import com.demo.a.service.TestService;
 
 @Service
-@PropertySource("classpath:/config/config.properties")
 public class TestServiceImpl implements TestService {
 
-	 @Value("${magic}")
-	 private String str;
+    private static final Logger logger = LoggerFactory.getLogger(TestServiceImpl.class);
 
-	@Override
-	public User save(User user) {
-		System.out.println(user);
-		 System.out.println("str=" + str);
-		return null;
-	}
+    @Autowired
+    private TestReposotory testReposotory;
+
+    @Override
+    public User save(User user) {
+        logger.info("user:[{}]", JSON.toJSON(user));
+        testReposotory.save(user);
+        return user;
+    }
 
 }
