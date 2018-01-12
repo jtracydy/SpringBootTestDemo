@@ -13,7 +13,7 @@ public class ScEntity {
     @Column(name = "score")
     private String score;
 
-    @Column(name = "t_id")
+    @Column(name = "c_id")
     private Long c_id;
 
     public Long getS_id() {

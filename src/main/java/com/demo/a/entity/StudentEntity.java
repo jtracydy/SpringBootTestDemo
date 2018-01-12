@@ -1,6 +1,7 @@
 package com.demo.a.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "student")
@@ -17,7 +18,12 @@ public class StudentEntity {
     private Long s_age;
 
     @Column(name = "s_sex")
-    private Long s_sex;
+    private String s_sex;
+
+    @OneToMany
+    @JoinColumn(name="s_id", referencedColumnName="s_id",
+            insertable = false, updatable = false)
+    private List<ScEntity> scEntities;
 
     public Long getS_id() {
         return s_id;
@@ -43,11 +49,19 @@ public class StudentEntity {
         this.s_age = s_age;
     }
 
-    public Long getS_sex() {
+    public String getS_sex() {
         return s_sex;
     }
 
-    public void setS_sex(Long s_sex) {
+    public void setS_sex(String s_sex) {
         this.s_sex = s_sex;
+    }
+
+    public List<ScEntity> getScEntities() {
+        return scEntities;
+    }
+
+    public void setScEntities(List<ScEntity> scEntities) {
+        this.scEntities = scEntities;
     }
 }
