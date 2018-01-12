@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.demo.a.entity.User;
+import com.demo.a.entity.UserEntity;
 import com.demo.a.service.TestService;
 
 import io.swagger.annotations.Api;
@@ -24,8 +24,8 @@ public class TestController {
 	@ApiOperation(value = "测试登录")
 	@ResponseBody
 	@RequestMapping(value = "/save", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE }, method = RequestMethod.POST)
-	public User testTest(String name, String pwd) {
-		User user = new User();
+	public UserEntity testTest(String name, String pwd) {
+		UserEntity user = new UserEntity();
 		user.setName(name);
 		user.setPwd(pwd);
 		return TestService.save(user);

@@ -1,8 +1,8 @@
 package com.demo.a.service;
 
-import com.demo.a.entity.User;
+import com.demo.a.entity.UserEntity;
 
 public interface TestService {
 
-	User save(User user);
+	UserEntity save(UserEntity user);
 }
