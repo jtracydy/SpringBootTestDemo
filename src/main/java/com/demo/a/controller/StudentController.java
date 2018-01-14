@@ -3,6 +3,7 @@ package com.demo.a.controller;
 import com.demo.a.entity.ScEntity;
 import com.demo.a.entity.StudentEntity;
 import com.demo.a.entity.UserEntity;
+import com.demo.a.service.ScService;
 import com.demo.a.service.StudentService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -23,16 +24,29 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
+    @Autowired
+    private ScService scService;
+
     @ApiOperation(value = "学生信息")
     @ResponseBody
     @RequestMapping(value = "/queryByName", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE }, method = RequestMethod.POST)
     public StudentEntity queryByName(String name) {
         return studentService.queryByName(name);
     }
+
     @ApiOperation(value = "学生信息")
     @ResponseBody
     @RequestMapping(value = "/queryListByName", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE }, method = RequestMethod.POST)
     public List<ScEntity> queryListByName(String name) {
         return studentService.queryListByName(name);
     }
+
+    @ApiOperation(value = "学生成绩查询")
+    @ResponseBody
+    @RequestMapping(value = "/getScDynamicQuery", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE }, method = RequestMethod.POST)
+    public List<ScEntity> getScDynamicQuery(int pageSize, int size) {
+        return scService.getScDynamicQuery(pageSize,size);
+    }
+
+
 }
