@@ -8,6 +8,9 @@ public class ScEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "s_id")
     private Long s_id;
 
     @Column(name = "score")
@@ -15,6 +18,14 @@ public class ScEntity {
 
     @Column(name = "c_id")
     private Long c_id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getS_id() {
         return s_id;

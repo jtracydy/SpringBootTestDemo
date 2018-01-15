@@ -25,14 +25,16 @@ public class ScServiceImpl implements ScService {
 
     @Override
     public List<ScEntity> getScDynamicQuery(int pageSize, int size) {
-
         Specification<ScEntity> specification = specificationConfig.where();
         Sort sort = new Sort(Sort.Direction.ASC, "id");
-        Pageable pageable = new PageRequest(size, pageSize, sort);
-        Page<ScEntity> page = null;
-        do {
-            page = scRepository.findAll(pageable);
-        } while (page.hasNext());
-        return null;
+        Pageable pageable = new PageRequest(pageSize,size, sort);
+        Page<ScEntity> page = scRepository.findAll(specification,pageable);
+        List<ScEntity> list = page.getContent();
+        if(list.size()>0){
+            for(ScEntity entity : list){
+                System.out.println(entity.getId());
+            }
+        }
+        return page.getContent();
     }
 }
