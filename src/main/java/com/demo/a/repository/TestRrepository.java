@@ -6,4 +6,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 public interface TestRrepository extends JpaSpecificationExecutor<UserEntity>,JpaRepository<UserEntity,Long> {
 
+
+    UserEntity findByNameAndPassword(String name,String password);
 }

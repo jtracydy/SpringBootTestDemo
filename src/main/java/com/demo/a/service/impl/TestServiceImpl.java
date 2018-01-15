@@ -25,4 +25,10 @@ public class TestServiceImpl implements TestService {
         return user;
     }
 
+    @Override
+    public UserEntity findByNameAndPassword(String name, String password) {
+
+        return testReposotory.findByNameAndPassword(name,password);
+    }
+
 }

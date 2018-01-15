@@ -17,15 +17,27 @@ public class UserEntity implements Serializable {
 	private String name;
 
     @Column(name = "password")
-	private String pwd;
+	private String password;
 
 	public UserEntity() {
 	}
 
-	public UserEntity(String name, String pwd) {
+	public UserEntity(String name, String password) {
 		super();
 		this.name = name;
-		this.pwd = pwd;
+		this.password = password;
+	}
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -36,12 +48,11 @@ public class UserEntity implements Serializable {
 		this.name = name;
 	}
 
-	public String getPwd() {
-		return pwd;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-
 }

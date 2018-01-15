@@ -27,7 +27,17 @@ public class TestController {
 	public UserEntity testTest(String name, String pwd) {
 		UserEntity user = new UserEntity();
 		user.setName(name);
-		user.setPwd(pwd);
+		user.setPassword(pwd);
 		return TestService.save(user);
+	}
+
+	@ApiOperation(value = "根据密码查询用户信息")
+	@ResponseBody
+	@RequestMapping(value = "/findBy", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE }, method = RequestMethod.POST)
+	public UserEntity findByNameAndPassword(String name,String password){
+		UserEntity user = new UserEntity();
+		user.setName(name);
+		user.setPassword(password);
+		return TestService.findByNameAndPassword(name,password);
 	}
 }
