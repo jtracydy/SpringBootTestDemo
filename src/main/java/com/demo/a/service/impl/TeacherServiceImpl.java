@@ -15,8 +15,24 @@ public class TeacherServiceImpl implements TeacherService{
      @Autowired
      private TeacherRepositoryImpl teacherRepositoryImpl;
 
+     @Autowired
+     private TeacherRepository teacherRepository;
+
     @Override
     public List<TeacherEntity> getTeacherList() {
-        return teacherRepositoryImpl.getTeacherList();
+        List<TeacherEntity> list =teacherRepository.getTeacherList();
+        if(list.size() !=0){
+            for(TeacherEntity entity : list){
+                System.out.println( entity.getT_name());
+            }
+        }
+        List<TeacherEntity> listImpl =teacherRepositoryImpl.getTeacherListImpl();
+
+        if(listImpl.size() !=0){
+            for(TeacherEntity entity : listImpl){
+                System.out.println( entity.getT_name());
+            }
+        }
+        return null;
     }
 }

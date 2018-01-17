@@ -9,22 +9,29 @@ import javax.persistence.Query;
 import java.util.List;
 
 @Component
-public abstract  class TeacherRepositoryImpl{
+public  class TeacherRepositoryImpl{
 
      @Autowired
      private EntityManager entityManager;
 
-     public List<TeacherEntity> getTeacherList(){
-         String sql = "select * from teacher";
-         Query createQuery = entityManager.createQuery(sql);
+     public List<TeacherEntity> getTeacherListImpl(){
+         /**
+          * createQuery是执行JPQL查询的
+          */
+         String jpql = "select t from TeacherEntity t";
+         Query createQuery = entityManager.createQuery(jpql);
          List<TeacherEntity> data = createQuery.getResultList();
 
-         Query createNamedQueryQuery =  entityManager.createNamedQuery(sql);
-         List<TeacherEntity> nameData = createNamedQueryQuery.getResultList();
+         /**
+          * createNativeQuery是执行原生sql的
+          */
+         String sql = "SELECT t.`t_id`,t.`t_name`,c.`c_id`,c.`c_name`\n" +
+                 "FROM teacher t LEFT JOIN  course c\n" +
+                 "ON t.`t_id` = c.`t_id`\n";
 
          Query createNativeQuery = entityManager.createNativeQuery(sql);
          List<TeacherEntity> nativedata = createNativeQuery.getResultList();
 
-         return data;
+         return null;
      }
 }
