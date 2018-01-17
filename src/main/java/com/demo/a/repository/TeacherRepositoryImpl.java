@@ -9,7 +9,7 @@ import javax.persistence.Query;
 import java.util.List;
 
 @Component
-public abstract  class TeacherRepositoryImpl{
+public  class TeacherRepositoryImpl{
 
      @Autowired
      private EntityManager entityManager;
