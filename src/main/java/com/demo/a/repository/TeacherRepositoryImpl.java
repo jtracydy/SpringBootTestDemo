@@ -3,12 +3,13 @@ package com.demo.a.repository;
 import com.demo.a.entity.TeacherEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.util.List;
 
-@Component
+@Repository
 public  class TeacherRepositoryImpl{
 
      @Autowired

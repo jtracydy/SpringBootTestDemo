@@ -12,7 +12,12 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ScServiceImpl implements ScService {
@@ -36,5 +41,11 @@ public class ScServiceImpl implements ScService {
             }
         }
         return page.getContent();
+    }
+
+    public List<ScEntity> getScDynamicQueryPage(int pageSize, int size, Map<String, String> map) {
+        return scRepository.findAll(specificationConfig.whereMap(map),
+                new PageRequest(pageSize, size, new Sort(Sort.Direction.ASC, "id"))).
+                getContent();
     }
 }

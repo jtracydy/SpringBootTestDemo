@@ -26,11 +26,12 @@ public class TeacherServiceImpl implements TeacherService{
                 System.out.println( entity.getT_name());
             }
         }
-        List<TeacherEntity> listImpl =teacherRepositoryImpl.getTeacherListImpl();
-
-        if(listImpl.size() !=0){
-            for(TeacherEntity entity : listImpl){
-                System.out.println( entity.getT_name());
+        List<TeacherEntity> listImpl = teacherRepositoryImpl.getTeacherListImpl();
+        if (!listImpl.isEmpty()) {
+            if (listImpl.size() != 0) {
+                for (TeacherEntity entity : listImpl) {
+                    System.out.println(entity.getT_name());
+                }
             }
         }
         return null;
