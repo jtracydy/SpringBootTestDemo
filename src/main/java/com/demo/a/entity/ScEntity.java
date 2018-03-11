@@ -2,6 +2,12 @@ package com.demo.a.entity;
 
 import javax.persistence.*;
 
+/**
+ * 成绩表：
+ * 一个学生可以有多个分数
+ * 一门课程可以对应多门成绩
+ */
+
 @Entity
 @Table(name = "sc")
 public class ScEntity {
@@ -18,6 +24,11 @@ public class ScEntity {
 
     @Column(name = "c_id")
     private Long c_id;
+
+    /**
+     * 根据学生的id，可以查询到它的多个课程的分数
+     */
+
 
     public Long getId() {
         return id;

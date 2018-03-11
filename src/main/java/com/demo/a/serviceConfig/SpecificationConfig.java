@@ -28,6 +28,15 @@ public class SpecificationConfig<T>{
                  * 3 CriteriaQuery是一个顶层的查询，它包含查询的各个部分select 、from、where、group by、order by
                  */
                 List<Predicate> predicates = new ArrayList<Predicate>();
+
+//
+//                List<Predicate> list = new ArrayList<>();
+//                String uuid = "";
+//                list.add(cb.like(root.<String>get("uuid"), "%" + uuid + "%"));
+//                String acctNo = "";
+//                list.add(cb.equal(root.get("acctNo"), acctNo));
+//                return query.where(list.toArray(new Predicate[list.size()])).getRestriction();
+
                 return query.where(predicates.toArray(new Predicate[predicates.size()])).getRestriction();
             }
         };

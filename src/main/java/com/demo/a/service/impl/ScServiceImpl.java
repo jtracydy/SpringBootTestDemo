@@ -2,6 +2,7 @@ package com.demo.a.service.impl;
 
 import com.demo.a.entity.ScEntity;
 import com.demo.a.repository.ScRepository;
+import com.demo.a.repository.ScRepositoryImpl;
 import com.demo.a.service.ScService;
 import com.demo.a.serviceConfig.SpecificationConfig;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +13,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
 import java.util.List;
 import java.util.Map;
 
@@ -27,6 +24,9 @@ public class ScServiceImpl implements ScService {
 
     @Autowired
     private ScRepository scRepository;
+
+    @Autowired
+    private ScRepositoryImpl scRepositoryImpl;
 
     @Override
     public List<ScEntity> getScDynamicQuery(int pageSize, int size) {
@@ -41,6 +41,12 @@ public class ScServiceImpl implements ScService {
             }
         }
         return page.getContent();
+    }
+
+    @Override
+    public List<ScEntity> findBySId(Long sId) {
+        List<ScEntity> list = scRepositoryImpl.findBySId(sId);
+        return list;
     }
 
     public List<ScEntity> getScDynamicQueryPage(int pageSize, int size, Map<String, String> map) {

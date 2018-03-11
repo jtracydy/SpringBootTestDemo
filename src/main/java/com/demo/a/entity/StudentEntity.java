@@ -20,10 +20,22 @@ public class StudentEntity {
     @Column(name = "s_sex")
     private String s_sex;
 
-    @OneToMany
+    /**
+     * 学生跟成绩是一对多的关系，一个学生有多门成绩
+     */
+    @OneToMany(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
     @JoinColumn(name="s_id", referencedColumnName="s_id",
             insertable = false, updatable = false)
     private List<ScEntity> scEntities;
+
+    /**
+     * 一个学生对应多个老师
+     */
+    @OneToMany(cascade = CascadeType.REMOVE,fetch = FetchType.LAZY)
+    @JoinColumn(name="s_id", referencedColumnName="s_id",
+            insertable = false, updatable = false)
+    private List<TeacherEntity> thEntity;
+
 
     public Long getS_id() {
         return s_id;

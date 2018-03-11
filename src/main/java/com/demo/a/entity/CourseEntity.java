@@ -16,6 +16,7 @@ public class CourseEntity {
     @Column(name = "t_id")
     private Long t_id;
 
+
     public Long getC_id() {
         return c_id;
     }
