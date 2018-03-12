@@ -11,6 +11,8 @@ public class Demo01 {
         System.out.println(d1);
         String d2 =  DateFormatUtils.format(new Date(),formate);
         System.out.println(d2);
+
+
         System.out.println(d1.equals(d2));
     }
 }
