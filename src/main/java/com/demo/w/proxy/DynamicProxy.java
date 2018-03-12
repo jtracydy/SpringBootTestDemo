@@ -2,6 +2,8 @@ package com.demo.w.proxy;
 
 /**
  * 动态代理，使用JDK内置的Proxy实现
+ *
+ * java内置的代理类：被代理的类必须实现接口，没有实现接口的类不能够被代理
  */
 
 import java.lang.reflect.InvocationHandler;
