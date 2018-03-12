@@ -2,7 +2,6 @@ package com.demo.a.service.impl;
 
 import com.demo.a.entity.ScEntity;
 import com.demo.a.repository.ScRepository;
-import com.demo.a.repository.ScRepositoryImpl;
 import com.demo.a.service.ScService;
 import com.demo.a.serviceConfig.SpecificationConfig;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +12,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -24,9 +24,6 @@ public class ScServiceImpl implements ScService {
 
     @Autowired
     private ScRepository scRepository;
-
-    @Autowired
-    private ScRepositoryImpl scRepositoryImpl;
 
     @Override
     public List<ScEntity> getScDynamicQuery(int pageSize, int size) {
@@ -45,8 +42,8 @@ public class ScServiceImpl implements ScService {
 
     @Override
     public List<ScEntity> findBySId(Long sId) {
-        List<ScEntity> list = scRepositoryImpl.findBySId(sId);
-        return list;
+//        List<ScEntity> list = scRepositoryImpl.findBySId(sId);
+        return new ArrayList<>();
     }
 
     public List<ScEntity> getScDynamicQueryPage(int pageSize, int size, Map<String, String> map) {
