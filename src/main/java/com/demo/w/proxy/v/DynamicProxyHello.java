@@ -26,9 +26,9 @@ public class DynamicProxyHello implements InvocationHandler {
      * @param target
      * @return
      */
-    public Object getProxy(Object target) {
+    public <T> T getProxy(Object target) {
         this.target = target;
-        return Proxy.newProxyInstance
+        return (T) Proxy.newProxyInstance
                 (target.getClass().getClassLoader(),
                 target.getClass().getInterfaces(),
                         this);
