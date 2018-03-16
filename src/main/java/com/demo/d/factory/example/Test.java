@@ -16,7 +16,7 @@ public class Test {
         nk.desc();
 
         /**
-         * 普通工厂方法：
+         * 工厂方法：
          */
         NoodlesFactory factory1 = new GankouFactory();
         INoodles gk3 = factory1.create();
@@ -26,6 +26,9 @@ public class Test {
         INoodles nor = factoryNor.create();
         nor.desc();
 
+        /**
+         * 抽象
+         */
 
         AbstractFoodFactory abstractFoodFactory1 = new KFCFoodFactory();
         abstractFoodFactory1.createDrinks().prices();

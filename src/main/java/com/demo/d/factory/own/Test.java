@@ -31,10 +31,12 @@ public class Test {
         BoatFactoryPattern boatFactoryPattern = new YachtFactory();
         boatFactoryPattern.getBoat("qwe").size();
 
-
         System.out.println("工厂模式类。。。。。。。。。。end");
         System.out.println();
         System.out.println("抽象工厂模式类。。。。。。。。。。start");
+        FactoryPattern factoryPattern = new BenzNewFactory();
+        factoryPattern.getBoat("123").size();
+        factoryPattern.getCar().type();
         System.out.println("抽象工厂模式类。。。。。。。。。。end");
     }
 }
