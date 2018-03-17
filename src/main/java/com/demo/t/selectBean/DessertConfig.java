@@ -1,4 +1,4 @@
-package com.demo.t.s03.selectBean;
+package com.demo.t.selectBean;
 
 
 public class DessertConfig {

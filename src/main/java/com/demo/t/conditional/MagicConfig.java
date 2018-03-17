@@ -1,4 +1,4 @@
-package com.demo.t.c_03.conditional;
+package com.demo.t.conditional;
 
 public class MagicConfig {
 	public String str = "1231231";

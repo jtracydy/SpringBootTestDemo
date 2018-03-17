@@ -1,4 +1,4 @@
-package com.demo.t.c_03.conditional;
+package com.demo.t.conditional;
 
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;

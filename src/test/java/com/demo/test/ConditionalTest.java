@@ -3,7 +3,7 @@ package com.demo.test;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.demo.a.config.BaseTestCase;
-import com.demo.t.c_03.conditional.MagicConfig;
+import com.demo.t.conditional.MagicConfig;
 
 public class ConditionalTest extends BaseTestCase {
 
