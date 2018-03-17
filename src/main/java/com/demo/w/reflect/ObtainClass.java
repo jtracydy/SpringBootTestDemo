@@ -10,9 +10,11 @@ import java.lang.reflect.Method;
  */
 public class ObtainClass {
 
-    public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchFieldException {
+    public static void main(String[] args) throws Exception, IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchFieldException {
         User user1 = new User();
         Class c1 = user1.getClass();
+
+
         System.out.println("className=="+c1.getName());
         System.out.println("classLoader=="+c1.getClassLoader());
         Method method[] = c1.getMethods();
@@ -61,6 +63,8 @@ public class ObtainClass {
         c1.getField("pwd").set(o,"return");
         System.out.println(o.getPwd());
 
+        User user2 = new User();
+        Class cu = user2.getClass();
         Class c2 = User.class;
         Class c3 = null;
         try {
