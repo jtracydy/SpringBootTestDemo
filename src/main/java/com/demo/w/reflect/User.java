@@ -42,7 +42,7 @@ public class User {
         this.pwd = pwd;
     }
 
-    public void getMethod(){
-
+    public void getMethod(String str){
+        System.out.println("invoke getMethod "+str);
     }
 }
