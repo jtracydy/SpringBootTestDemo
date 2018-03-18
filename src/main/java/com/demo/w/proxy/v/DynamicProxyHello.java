@@ -16,7 +16,7 @@ public class DynamicProxyHello implements InvocationHandler {
 
     /**
      * Proxy ：提供静态的方法产生动态代理类对象
-     * newProxyInstance： 返回指定代理类的的对象，代理对象在做newProxyInstance时，
+     * newProxyInstance： 返回指定代理类的的对象，同时代理对象在做newProxyInstance时，
      * 给代理类提供了什么样的接口代理类就实现这组接口
      *
      * ClassLoader loader：定义了由那个classLoader对象来加载指定的代理类
