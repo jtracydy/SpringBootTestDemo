@@ -1,8 +1,6 @@
 package com.demo.w.clone;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.io.*;
 
 /**
  *
@@ -11,8 +9,21 @@ public class CloneUtils {
 
     public static <T extends Serializable> T clone(T obj){
 
-        Collections.sort(new ArrayList<Comparable>());
+        T cloneObj = null;
+        try{
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            ObjectOutputStream obs = new ObjectOutputStream(out);
+            obs.writeObject(obj);
+            obs.close();
+            ByteArrayInputStream in = new ByteArrayInputStream(out.toByteArray());
+            ObjectInputStream ois = new ObjectInputStream(in);
+            cloneObj = (T) ois.readObject();
+            ois.close();
+        }
+        catch (Exception e){
 
-        return obj;
+        }
+
+        return cloneObj;
     }
 }

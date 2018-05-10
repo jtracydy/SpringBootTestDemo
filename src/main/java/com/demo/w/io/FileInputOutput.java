@@ -10,8 +10,9 @@ public class FileInputOutput {
 
     public static void main(String[] args) throws IOException {
         String path = "E:\\JVM.png";
-        String pathTo = "E:\\JVM_copy.png";
-        fileStream(path, pathTo);
+        String pathTo = "E:\\JVM_copy_1.png";
+//        fileStream(path, pathTo);
+        bufferedStream(path, pathTo);
     }
 
     public static void fileStream(String path, String pathTo) throws IOException {
@@ -42,14 +43,18 @@ public class FileInputOutput {
     public static void bufferedStream(String path, String pathTo) throws IOException {
         FileInputStream fis = null;
         FileOutputStream fos = null;
-        fis = new FileInputStream(path);             //写入流关联文件
+        fis = new FileInputStream(path);
         fos = new FileOutputStream(pathTo);
         BufferedInputStream bis = new BufferedInputStream(fis);
         BufferedOutputStream bos = new BufferedOutputStream(fos);
         int buf = 0;
-//        while((bis.read()!=buf) != 0){
-//
-//        }
+        byte[] b = new  byte[1024];
+        int num = 0;
+        StringBuilder sb = new StringBuilder();
+        while ((num = bis.read(b)) != -1) {
+            sb.append(String.valueOf(b));
+        }
+        System.out.println(b);
     }
 
 }

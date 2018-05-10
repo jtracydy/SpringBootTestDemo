@@ -68,7 +68,7 @@ public class FileReaderWriter {
             bw.flush();
         }
 
-        bw.flush();                                                //刷新缓冲区
+        bw.flush();                       //刷新缓冲区
         bw.close();
 
         fw.close();
