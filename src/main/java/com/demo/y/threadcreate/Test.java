@@ -1,4 +1,4 @@
-package com.demo.y.threadRun;
+package com.demo.y.threadcreate;
 
 public class Test {
 
